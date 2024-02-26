@@ -1,0 +1,64 @@
+<div class="container" style="background:rgb(103, 181, 236);width:100%;height:900px">
+    <div class="row  p-3">
+        {{#if personas}}
+       
+            <div class="col-md-12 col-xl-12 col-sm-6 col-xm-4 mx-auto mt-5 " >
+                <table class="table table-responsive-{xx}
+{sm-md-lg-xl-xxl} text-center text-uppercase" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);">
+                    <thead class="table-success" >
+                        
+                        <tr >
+                             <td>Nombres</td>
+                            <td>Apellidos</td>
+                            <td>Cedula</td>
+                            <td>correo</td>
+                            <td>telefono</td>
+                            <td>status</td>
+                            <td colspan="2">Acciones</td>                            
+                        </tr>                       
+                    </thead>
+                    <tbody class="text-dark">
+                         {{#each personas}}
+                        <tr>
+                             <td>{{nombres}}</td>
+                            <td>{{apellidos}}</td>
+                            <td>{{cedula}}</td>
+                            <td>{{correo}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{status}}</td>
+                           <td>
+                                <a href="/update/{{id}}" class="btn btn-primary">
+                                    <i class="fi fi-rr-pencil"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/delete/{{id}}"  class="btn btn-danger">
+                                    <i class="fi fi-rr-trash"></i>
+                                </a>
+                            </td>                            
+                        </tr>
+                          {{/each}}
+                    </tbody>
+                    <tfoot  class="table-success">
+                        <tr>
+                            <td class="" colspan="9">registro de personas</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+       
+        {{else}}
+       <div class="card text-center mx-auto mt-3" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);background: turquoise;width: 550px;" >
+        <div class="card-header">
+            <h3 class="text-center text-uppercase text-primary">base de datos sin registros</h3>
+        </div>
+        <div class="card-body">
+            <p>Presiona este boton para que puedas registrar una persona en la aplicacion</p>
+            <a href="/addPerson" class="btn-btn-primary">Crear Persona</a>
+        </div>
+
+       </div>
+        {{/if}}
+
+    </div>
+</div>
