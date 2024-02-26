@@ -1,6 +1,12 @@
 import express from "express"
 const router = express.Router();
-import {pool} from "../database.js"
+//import {pool} from "../database.js"
+import {Pool} from 'postgres-pool'
+
+const pool = new Pool({
+    connectionString:process.env.DATABASE_URI,
+    ssl:true
+})
 
 router.get('/blog',(req,res)=>{
     res.render('blog')

@@ -8,6 +8,8 @@ import personRoutes from './routes/personasRouter.js'
 
 
 
+
+
 //inicializaciones
 const app= express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
