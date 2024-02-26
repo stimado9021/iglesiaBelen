@@ -5,7 +5,7 @@ import {Pool} from 'postgres-pool'
 
 const pool = new Pool({
     connectionString:process.env.DATABASE_URI,
-    ssl:true
+    //ssl:true
 })
 
 router.get('/blog',(req,res)=>{
